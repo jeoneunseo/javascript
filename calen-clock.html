@@ -34,12 +34,88 @@
         <section class="sec date" id="date"></section>
     </section>
     <script>
-        let date = new Date(); //오늘의 날짜와 시간
-        let toHour = date.getHours(); //현재시
-        let toMinute = date.getMinutes(); //현재분
-        let toSecond = date.getSeconds(); //현재초
-        let _time = document.getElementById('time'); //시간표시 엘리먼트
-        _time.innerHTML = toHour + '시 ' + toMinute + '분 ' + toSecond + '초'; //현재시간 표시
+        //시간표시
+        setInterval(function(){
+            let date = new Date(); //오늘의 날짜와 시간
+            let toHour = date.getHours(); //현재시
+            let toMinute = date.getMinutes(); //현재분
+            let toSecond = date.getSeconds(); //현재초
+            let _time = document.getElementById('time'); //시간표시 엘리먼트
+            _time.innerHTML = toHour + '시 ' + toMinute + '분 ' + toSecond + '초'; //현재시간 표시
+        },1000);
+
+
+
+
+        setInterval(function(){
+            //날짜표시
+            let date = new Date(); //오늘의 날짜와 시간
+            let toYear = date.getFullYear();
+            let toMonth = date.getMonth() + 1;
+            let toDate = date.getDate();
+            let toDay = date.getDay();
+            switch(toDay){
+                case 0:
+                    toDay='일요일';
+                    break;
+                case 1:
+                    toDay='월요일';
+                    break;
+                case 2:
+                    toDay='화요일';
+                    break;
+                case 3:
+                    toDay='수요일';
+                    break;
+                case 4:
+                    toDay='목요일';
+                    break;
+                case 5:
+                    toDay='금요일';
+                    break;
+                case 6:
+                    toDay='토요일';
+                    break;
+            }
+            let _date = document.getElementById('date');//날짜 전달 엘리먼트
+            _date.innerHTML = toYear + '년 ' + toMonth + '월 ' + toDate + '일 ' + toDay;
+            },86400000);
+            
+            //날짜표시
+            let date = new Date(); //오늘의 날짜와 시간
+            let toYear = date.getFullYear();
+            let toMonth = date.getMonth() + 1;
+            let toDate = date.getDate();
+            let toDay = date.getDay();
+            switch(toDay){
+                case 0:
+                    toDay='일요일';
+                    break;
+                case 1:
+                    toDay='월요일';
+                    break;
+                case 2:
+                    toDay='화요일';
+                    break;
+                case 3:
+                    toDay='수요일';
+                    break;
+                case 4:
+                    toDay='목요일';
+                    break;
+                case 5:
+                    toDay='금요일';
+                    break;
+                case 6:
+                    toDay='토요일';
+                    break;
+            }
+            let _date = document.getElementById('date');//날짜 전달 엘리먼트
+            _date.innerHTML = toYear + '년 ' + toMonth + '월 ' + toDate + '일 ' + toDay;
+
+        
+
+            
 
     </script>
 </body>
