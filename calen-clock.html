@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력 - 시계</title>
+    <style>
+        .wrap{
+            /* width:600px; */
+            height:600px;
+            margin:100px auto;
+            /* border: 1px solid black; */
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .time{
+            font-weight:700;
+            font-size:100px;
+            color:red;
+        }
+        .date{
+            font-weight:500;
+            font-size:50px;
+            color:darkblue;
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <section class="sec time" id="time"></section>
+        <section class="sec date" id="date"></section>
+    </section>
+    <script>
+        let date = new Date(); //오늘의 날짜와 시간
+        let toHour = date.getHours(); //현재시
+        let toMinute = date.getMinutes(); //현재분
+        let toSecond = date.getSeconds(); //현재초
+        let _time = document.getElementById('time'); //시간표시 엘리먼트
+        _time.innerHTML = toHour + '시 ' + toMinute + '분 ' + toSecond + '초'; //현재시간 표시
+
+    </script>
+</body>
+</html>
